@@ -1,0 +1,122 @@
+<div class=" container section">
+  <h3>{{HeaderText}}</h3>
+  <hr class="mb-4" />
+  <form [formGroup]="studentForm" (ngSubmit)="saveStudent(studentForm)">
+    <div class="">
+      
+      <!--First Line-->
+      <div class="row">
+        <div class="col-6 form-group">
+          <label for="name" class="control-label" style="font-size: 18px;">Name</label>
+          <input id="name" class=" form-control" formControlName="nameFr" type="text" minlength="5" required>
+          <div *ngIf="studentForm.get('nameFr').errors && (studentForm.get('nameFr').touched||
+            studentForm.get('nameFr').dirty) " class="text-danger">
+            <small *ngIf="studentForm.get('nameFr').hasError('required')" class="text-danger">
+              Name is required
+            </small>
+            <small *ngIf="studentForm.get('nameFr').hasError('minlength')" class="text-danger">
+              Name is too short
+            </small>
+          </div>
+        </div>
+        <div class="col-6 form-group">
+          <label for="nameAr" class="control-label" style="font-size: 18px;">Name Arabic</label>
+          <input id="nameAr" class=" form-control" formControlName="nameAr" type="text" minlength="5">
+          <div *ngIf="studentForm.get('nameAr').errors && (studentForm.get('nameAr').touched||
+              studentForm.get('nameAr').dirty) " class="text-danger">
+            <small *ngIf="studentForm.get('nameAr').hasError('required')" class="text-danger">
+              Arabic Name is required
+            </small>
+            <small *ngIf="studentForm.get('nameAr').hasError('minlength')" class="text-danger">
+              Name is too short
+            </small>
+          </div>
+        </div>
+      </div>
+      
+      <!--Second Line-->
+      <div class="row mt-4">
+        <div class="col-6 form-group">
+          <label for="dateOfBirth" class="control-label" style="font-size: 18px;">Date of Birth</label>
+          <input id="dateOfBirth" class=" form-control" formControlName="dateOfBirth" type="date" minlength="5">
+          <div *ngIf="studentForm.get('dateOfBirth').errors && (studentForm.get('dateOfBirth').touched||
+              studentForm.get('dateOfBirth').dirty) " class="text-danger">
+            <small *ngIf="studentForm.get('dateOfBirth').hasError('required')" class="text-danger">
+              Date is required
+            </small>
+          </div>
+        </div>
+        <div class="col-6 form-group">
+          <label for="religionId" class="control-label" style="font-size: 18px;">Religion</label>
+          <select id="religionId" class=" form-control" formControlName="religionId" >
+            <option>Muslim</option>
+            <option>Christian</option>
+            <option>Other</option>
+          </select>
+          <!-- <div *ngIf="studentForm.get('religionId').errors && (studentForm.get('religionId').touched||
+              studentForm.get('religionId').dirty) " class="text-danger">
+            <small *ngIf="studentForm.get('religionId').hasError('required')" class="text-danger">
+              Religion is required
+            </small>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class=" form-group">
+          <label for="locationOfBirth" class="control-label" style="font-size: 18px;">Location of Birth</label>
+          <input id="locationOfBirth" class=" form-control" formControlName="locationOfBirth" type="text" required>
+          <div *ngIf="studentForm.get('locationOfBirth').errors && (studentForm.get('locationOfBirth').touched||
+              studentForm.get('locationOfBirth').dirty) " class="text-danger">
+            <small *ngIf="studentForm.get('locationOfBirth').hasError('required')" class="text-danger">
+              Location is required
+            </small>
+          </div>
+        </div>
+      </div>
+
+
+      <div class=" form-group">
+        <label for="telephone" class="control-label" style="font-size: 18px;">telephone</label>
+        <input id="telephone" class=" form-control" formControlName="telephone" type="text">
+        <div *ngIf="studentForm.get('telephone').errors && (studentForm.get('telephone').touched||
+            studentForm.get('telephone').dirty) " class="text-danger" required>
+          <small *ngIf="studentForm.get('telephone').hasError('required')" class="text-danger">
+            Number is required
+          </small>
+          <small *ngIf="studentForm.get('telephone').hasError('pattern')" class="text-danger">
+            Only numbers
+          </small>
+        </div>
+      </div>
+      <div class=" form-group">
+        <label for="locationOfBirth" class="control-label" style="font-size: 18px;">Father Name</label>
+        <input id="locationOfBirth" class=" form-control" formControlName="locationOfBirth" type="text" minlength="5">
+        <div *ngIf="studentForm.get('locationOfBirth').errors && (studentForm.get('locationOfBirth').touched||
+            studentForm.get('locationOfBirth').dirty) " class="text-danger">
+          <small *ngIf="studentForm.get('locationOfBirth').hasError('required')" class="text-danger">
+            Father Name is required
+          </small>
+          <small *ngIf="studentForm.get('locationOfBirth').hasError('minlength')" class="text-danger">
+            Name is too short
+          </small>
+        </div>
+      </div>
+      <div class=" form-group">
+        <label for="motherName" class="control-label" style="font-size: 18px;">Mother Name</label>
+        <input id="motherName" class=" form-control" formControlName="motherName" type="text" minlength="5">
+        <div *ngIf="studentForm.get('motherName').errors && (studentForm.get('motherName').touched||
+            studentForm.get('motherName').dirty) " class="text-danger">
+          <small *ngIf="studentForm.get('motherName').hasError('required')" class="text-danger">
+            Mother Name is required
+          </small>
+          <small *ngIf="studentForm.get('motherName').hasError('minlength')" class="text-danger">
+            Name is too short
+          </small>
+        </div>
+      </div>
+    </div>
+    <!-- {{studentForm.value|json}} -->
+    <button type="button" [disabled]="studentForm.invalid" type="submit" class="btn btn-md btn-primary">Save</button>
+  </form>
+</div>

@@ -1,0 +1,55 @@
+<div class=" container section">
+  <div class="row">
+    <div class="col-12">
+      <!--Start-->
+      <div class="card">
+        <div class="card-header ">
+          Personal Info
+        </div>
+        <div class="card-body">
+          <div class=" container">
+            <div class="row">
+              <div class="col-4 col-md-2 header">Name :</div>
+              <div class="col-8 col-md-10 info">{{student.nameFr}}</div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-4 col-md-2 header">Name Arabic </div>
+              <div class="col-8 col-md-4 info">{{student.nameAr}}</div>
+              <div class="col-4 col-md-2 header">Grade</div>
+              <div class="col-8 col-md-4 info">{{student.grade}}</div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-4 col-md-2 header">Date of Birth </div>
+              <div class="col-8 col-md-4 info">{{student.dateOfBirth}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End-->
+      <br>
+      <!--Start-->
+      <div class="card">
+        <div class="card-header" (click)="Collapse()">
+          <i class="fas fa-caret-down float-right"></i>Parents Info
+        </div>
+        <div class="card-body" *ngIf=" show">
+          <div class=" container">
+            <div class="row">
+              <div class="col-4 col-md-2 header">Father Name :</div>
+              <div class="col-8 col-md-10 info">{{student.fatherName}}</div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-4 col-md-2 header">Mother Name :</div>
+              <div class="col-8 col-md-4 info">{{student.motherName}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End-->
+      <br>
+    </div>
+  </div>
+</div>

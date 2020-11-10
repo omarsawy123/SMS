@@ -1,0 +1,31 @@
+<div class=" container  section">
+  <a class="btn btn-primary float-right mb-4" [routerLink]="['/students/add']" routerLinkActive="router-link-active">Add
+    Student</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">NameAr</th>
+        <th scope="col">NameFr</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="students">
+        <tr *ngFor="let student of students" (click)="OnStudentClick(student.studentId)" style="cursor: pointer;">
+          <th scope="row"> {{student.studentId}} </th>
+          <td>{{student.nameAr}}</td>
+          <td>{{student.nameFr}}</td>
+          <td>{{student.dateOfBirth}}</td>
+          <td>{{student.grade}}</td>
+          <td>
+          </td>
+        </tr>
+      </ng-container>
+      <ng-container *ngIf="!students">
+        <h3>Loading...</h3>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

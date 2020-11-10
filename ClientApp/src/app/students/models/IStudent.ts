@@ -1,0 +1,54 @@
+export interface IStudent {
+
+    studentId: number;
+    code: string
+    codeCount: number
+    nameFr: string;
+    nameAr: string;
+    dateOfBirth: Date;
+    fatherName: string;
+    motherName: string;
+    telephone: string;
+    registrationDate?: Date;
+    locationOfBirth: string;
+    religionId: number;
+    genderTypeId: number;
+    nationalityId: number;
+    fatherQualificationId?: number;
+    fatherJob: string;
+    isFatherDied: boolean;
+    motherQualificationId?: number;
+    motherJob: string;
+    isMotherDied: boolean;
+    parentStatusId?: number;
+    nationalIdnumber: string;
+    email: string;
+    schoolEmail: string;
+    mobile: string;
+    address: string;
+    photoFileName: string;
+    privateNotes: string;
+    remarks: string;
+    creatorUserId: number;
+    creationDate: Date;
+    modifiedUserId: number;
+    lastDateModified: Date;
+    isDeleted: boolean;
+    integrationId: string;
+    fatherWorkTelephone: string;
+    motherWorkTelephone: string;
+    areaId?: number;
+    fatherMobile: string;
+    motherMobile: string;
+    officialRegistrationDate?: Date;
+    officialRegistrationNumber: number;
+    firstNameAr: string;
+    fatherNationalIdnumber: string;
+    hasResponsible?: boolean;
+    responsibleName: string;
+    studentResponsibleRelationId?: number;
+    responsibleTelephone: string;
+    responsibleAddress: string;
+    responsibleMobile: string;
+
+}
